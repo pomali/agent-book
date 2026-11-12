@@ -42,6 +42,9 @@ language: en
 format: agent-book/0.1
 canon: [canon/facts.md, canon/misconceptions.md]
 studio: STUDIO.md
+provenance: strict       # strict | light | off
+tests: tests.md          # optional
+tone: tone/              # optional, one file per language
 ---
 ```
 
@@ -150,7 +153,7 @@ Ladder (use the highest rung you actually have; never fake a rung):
 A brief:
 
 ```
-### V2: Thread anatomy                     (V = visual, A = audio, W = web)
+### V2: Thread anatomy
 - when: part 02, or whenever pitch/diameter is confused
 - make: cross-section of an external thread with labelled dimensions
 - must show: major diameter, minor diameter, pitch, 60° flank angle
@@ -158,6 +161,20 @@ A brief:
 - canon: T1–T4
 - done when: a reader can point to pitch and major diameter unprompted
 ```
+
+Brief ids start with a letter for the kind of thing made. Use what the book
+needs; these are the kinds in use:
+
+| Letter | Kind | Examples |
+|---|---|---|
+| V | Visual | diagram, plate, portrait |
+| M | Map | a place that fills in as the reader goes |
+| C | Character sheet | who someone is, as far as the reader knows |
+| O | Object | a 3D model to turn, or a file to print |
+| A | Audio | narration, soundscape |
+| S | Style | CSS theme, typography, a shader behind the page |
+| W | Web | a page or small tool |
+| L | Live | how the book behaves in the live reader |
 
 `done when` is the acceptance test. An artifact that does not pass is redone
 or dropped, not shipped.
@@ -178,11 +195,59 @@ delivery worked. Keep it short enough to reread at the start of every session.
 
 ## Provenance
 
-Three labels, used in speech and in files:
+How much the agent must say about what is the author's and what is its own
+is the book's choice, set by `provenance` in `BOOK.md`:
 
-- **author-text**: delivered as written (translation and pacing allowed)
-- **canon-derived**: the agent's words, every claim traceable to canon
-- **improvised**: the agent's invention, consistent with canon
+- `strict`: always clear, in speech and in generated files. For books a
+  reader may act on, and for texts by a named author that must not be
+  confused with the agent's paraphrase.
+- `light`: when it matters, or when asked.
+- `off`: never volunteered. For fiction, where it breaks the spell. The agent
+  still answers truthfully if the reader asks.
+
+The three labels, where used: **author-text** (delivered as written),
+**canon-derived** (the agent's words, traceable to canon), **improvised**
+(the agent's invention, consistent with canon).
+
+## Canon tests (`tests.md`)
+
+Question and expected-answer pairs that can be answered from canon alone. An
+agent runs through them silently before performing; an author runs them
+after every canon change. Include questions whose right answer is a refusal:
+a secret not yet revealed, a number the book does not have, an open question
+that must not be settled.
+
+```
+- Q: What is the coarse pitch of M8?
+  A: 1.25 mm. (T5)
+```
+
+## Tone files (`tone/<language>.md`)
+
+Agents translate at reading time. A tone file makes the translation the
+author's: for one language it fixes the register, the names and terms that
+must always be rendered the same way, what stays untranslated, and a short
+sample of the book in that language to tune the ear. The book's main voice
+file remains the reference for everything not language-specific.
+
+## Seeds graduating (`candidates/`)
+
+A seed grown well for one reader can become part of the book.
+
+1. The reader's agent, with the reader's consent, submits the grown text as
+   `books/<id>/candidates/<seed-id>-<short-name>.md`, with the seed's front
+   matter and `status: candidate`. Nothing personal in it.
+2. Several candidates for one seed may sit side by side.
+3. The author picks, edits freely, moves the result to the main line as
+   `NN-slug.md` with `status: written`, deletes the seed from `OUTLINE.md`,
+   and adds any new facts to canon and a question to `tests.md`.
+
+Reading agents ignore `candidates/`.
+
+## The reader's own edition
+
+Every book should define, as a brief in `STUDIO.md`, what the reader can take
+away at the end: one file holding the book as this reader met it.
 
 ## Versioning
 

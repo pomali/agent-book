@@ -2,8 +2,8 @@
 
 Chapters not yet written out. Grow each in the voice of `world/voice.md`
 (reread a written chapter first), inside `world/canon.md`, at 700–1000 words.
-Stay with Katka. Label a grown chapter *improvised* and record anything you
-add that later chapters must respect in `reader/the-unploughed-strip/local-canon.md`.
+Stay with Katka. Record anything you add that later chapters must respect in
+`reader/the-unploughed-strip/local-canon.md`.
 
 Do not reveal anything from a later seed. Read ahead only as far as you need
 to avoid contradicting it.
@@ -175,7 +175,7 @@ the book's season, and shift by six months if they choose the season.
 
 ## Side paths (for *Among them* or on request)
 
-All *improvised*; none changes the main line.
+None of these changes the main line.
 
 - A day with Ondro and the oxen.
 - Trudka's journey to the valley three years ago.

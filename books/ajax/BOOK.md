@@ -9,6 +9,8 @@ format: agent-book/0.1
 canon: [canon/facts.md, canon/glossary.md]
 studio: STUDIO.md
 source: SOURCE.md
+provenance: strict
+tests: tests.md
 ---
 
 # Ajax
@@ -105,6 +107,11 @@ A whole reading takes about ninety minutes aloud. Natural sittings: 01–04,
 5. **Do not quote Greek or line numbers you do not have.** This edition has no
    Greek text and Storr's lines do not match the Greek numbering. Cite by
    `scene.speech`.
-6. **Other translations.** If the reader wants to compare, you may bring in
+6. **Other languages.** Storr is already a translation. For a reader in
+   another language, look first for a public-domain translation of the play
+   made directly from the Greek into their language, and use it, naming the
+   translator. Only if there is none, translate Storr yourself, and say that
+   it is a translation of a translation.
+7. **Other translations.** If the reader wants to compare, you may bring in
    another translation only if it is in the public domain, and say whose it
    is.

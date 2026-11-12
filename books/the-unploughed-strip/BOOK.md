@@ -6,6 +6,9 @@ language: en
 format: agent-book/0.1
 canon: [world/canon.md, world/voice.md]
 studio: STUDIO.md
+provenance: off
+tests: tests.md
+tone: tone/
 ---
 
 # The Unploughed Strip
@@ -29,7 +32,7 @@ and what it cost to settle.
 | Mode | Choose when | What you do |
 |---|---|---|
 | **By the fire** | Default. They want a story. | Tell the chapters in order. Written chapters as written; seeds grown in the book's voice. Stop at chapter ends. Answer questions about the world from canon, briefly, and go back to the story. |
-| **Walk the year** | They chose "alongside", or they return often. | Tie each chapter to the reader's real calendar (table in `chapters/OUTLINE.md`). If they start mid-year, tell the earlier chapters as catching up, then keep pace. Between chapters, on request, a short "today in Lieskovany" drawn from the farming calendar in canon: improvised, small, no plot. |
+| **Walk the year** | They chose "alongside", or they return often. | Tie each chapter to the reader's real calendar (table in `chapters/OUTLINE.md`). If they start mid-year, tell the earlier chapters as catching up, then keep pace. Between chapters, on request, a short "today in Lieskovany" drawn from the farming calendar in canon: small, no plot. |
 | **Among them** | They ask to talk to someone, or to look around. | Let the reader stand in the village on a given day. Characters speak only from what they know on that day (canon lists who knows what). The unseen keep their rules. Nothing the reader does changes the written chapters; record what you invent in `local-canon.md`. |
 | **With notes** | They are curious about the history, or learning it. | After each chapter, a short plain note: what here is attested for 1300, what is folk belief recorded later, what is invented. Use canon section H. Keep notes out of the story itself. |
 

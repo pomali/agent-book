@@ -6,6 +6,9 @@ language: en
 format: agent-book/0.1
 canon: [canon/facts.md, canon/misconceptions.md]
 studio: STUDIO.md
+provenance: strict
+tests: tests.md
+tone: tone/
 ---
 
 # Hold Fast

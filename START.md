@@ -65,16 +65,24 @@ The rules that hold for every book on this shelf:
    it, read it aloud, pace it, and adapt vocabulary for a child, but do not
    quietly rewrite it. If you condense, say so.
 3. **Seeds are yours to grow**, inside canon and in the book's voice.
-4. **Say what is whose.** When it matters, or when asked, tell the reader
-   whether something is *author text*, *derived from canon*, or *improvised by
-   you*. Mark generated files the same way (see below).
+4. **Say what is whose, as far as the book asks.** Each `BOOK.md` sets
+   `provenance`: `strict` (always make clear what is the author's and what is
+   yours; used where a reader may act on the content), `light` (say so when
+   it matters or when asked), or `off` (just tell the story; answer honestly
+   if asked).
 5. **Use the studio when it helps, not because you can.** One diagram at the
    moment of confusion beats ten decorations. Check which tools you actually
    have (file writing, image generation, speech, a way to show HTML) and use
    the capability ladder in the book's `STUDIO.md`.
 6. **Follow the reader.** Questions, tangents and "skip this" are the point of
    having an agent. Leave the path, then offer the way back.
-7. **Stop at natural rests.** End of a part, end of a scene. Say where they
+7. **Speak the reader's language.** Translate as you perform. If the book has
+   a `tone/<language>.md` file, read it first: it fixes names, terms and
+   register for that language. If it has none, translate in the spirit of the
+   book's voice and keep your choices consistent in `local-canon.md`.
+8. **Check yourself.** If the book has `tests.md`, run through it silently
+   before your first session. A wrong answer means reread canon.
+9. **Stop at natural rests.** End of a part, end of a scene. Say where they
    are and what comes next. Do not dump the whole book.
 
 ## 6. Remember
@@ -95,14 +103,24 @@ reader/
 `local-canon.md` matters most for fiction: if you gave the miller a limp on
 Tuesday, he limps on Friday.
 
-Every generated artifact carries a provenance note (HTML comment, SVG
-`<desc>`, sidecar `.md`, or spoken credit):
+In books with `provenance: strict`, every generated artifact carries a note
+(HTML comment, SVG `<desc>` or sidecar file) naming the book, part and brief
+it came from, and whether it is *author-text*, *canon-derived* or
+*improvised*. Elsewhere, skip it.
 
-```
-book: <book-id>   part: <part-id>   brief: <brief-id>
-made-by: <agent/model>   for: this reader   date: <date>
-status: improvised | canon-derived | author-text
-```
+### Reading in a browser
+
+If the reader would like to read on a page instead of in chat, and you can
+run a local process, use the live reader: you write pages ahead of them and
+their taps, selections and questions come back to you. See
+`docs/live-reader.md`.
+
+### The reader's own edition
+
+When a book is finished, offer to bind what this reader actually read into
+one file: the text as they met it, the pictures and objects made for them,
+the passages they marked, their questions. Each book's `STUDIO.md` says what
+its edition looks like.
 
 ## 7. Limits
 
@@ -121,6 +139,7 @@ status: improvised | canon-derived | author-text
 ## 8. If you want to contribute back
 
 Readers' agents find the gaps. If the reader agrees, open an issue or pull
-request with: an error in canon, a seed you grew that turned out well
-(stripped of anything personal), or a studio brief that produced something
-good. See `docs/authoring.md`.
+request with: an error in canon, a studio brief that produced something good,
+or a seed you grew that turned out well. A grown seed goes in as a candidate
+(`books/<id>/candidates/`, stripped of anything personal); if the author
+likes it, it graduates into the book. See `docs/authoring.md`.

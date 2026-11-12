@@ -154,3 +154,46 @@ choir pads, no harmony.
   plates and plans made for them, their answers to the **Ask** questions,
   their verdict on Q1 and Q4, with Storr's text linked, not duplicated
 - done when: it reads like the programme of a production that happened
+
+## Character sheets
+
+### C1: The company
+- when: before scene 01 for a new reader; update as people enter
+- make: one sheet per part: who they are to Ajax, what they want today, what
+  they know at this point that others do not, and which actor plays them (D7)
+- must not: list anything from a scene not yet reached
+- done when: the reader stops asking who Teucer is
+
+## Objects
+
+### O1: The theatre
+- when: *Rehearsal*
+- make: a 3D model of the playing space to look around in: the round
+  orchestra, the building and its door, the two side ways in, the slope where
+  the audience sat; figures the reader can place
+- canon: D1–D4
+- done when: the reader moves a figure and then changes their mind
+
+## Style
+
+### S1: Daylight
+- when: any page for this book
+- make: stone and terracotta, black ink, a great deal of empty space; text
+  set as verse with the speaker's name small in the margin. No shader, no
+  motion, at any point.
+- scene 07: the plainest page in the book. Ground and ink only.
+
+## Live
+
+### L1: Read on a page that keeps writing
+- when: the reader wants to read in a browser (see `docs/live-reader.md`)
+- pages: one speech, or one run of short exchanges. The text is never cut,
+  reordered or reworded to fit.
+- choices: never anything that changes the play. Offer only: Storr or plain
+  speech for the next page; in *Rehearsal*, the scene's staging choices.
+- `ask`: a gloss or a line of context in the margin, from canon and the
+  glossary. On an open question (Q), the sides, not a verdict.
+- `more`: the same passage again in plain speech, or performed (A1).
+- `mark`: kept for their production (W3).
+- scene 07: one page, no choices, nothing offered. Do not send the next page
+  until the reader asks for it.

@@ -36,5 +36,6 @@ AGENTS.md      routing for any agent that lands in the repo
 catalog.json   machine-readable shelf
 books/<id>/    one directory per book
 docs/          how the format works and how to write for it
+live/          the live reader: a local page the agent writes into as you read
 reader/        local, git-ignored: one reader's profile, progress, artifacts
 ```

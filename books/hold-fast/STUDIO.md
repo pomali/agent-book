@@ -188,3 +188,39 @@ its numbers could be misused.
   loose one rattling, with a spoken note that a rattle means the clamp load
   has already gone
 - canon: C5
+
+## Objects
+
+### O1: A thread you can turn
+- when: part 02; again in 05
+- make: an M8 × 1.25 bolt and nut as a 3D model to rotate and to cut in
+  section, true to canon proportions (T2–T5); and the same as a printable
+  file at five times size, so the pitch can be felt with a fingernail and the
+  nut run on by hand
+- must show: that the thread is one continuous ramp
+- must not: model the thread as stacked rings (the usual shortcut)
+- done when: the reader follows one ridge all the way round with a finger
+
+## Style
+
+### S1: Workshop page
+- when: any page for this book
+- make: large type, high contrast, wide tap targets, numbers in tabular
+  figures. Light or dark by the reader's setting. No motion, no shader.
+- done when: it can be read at arm's length with dirty hands
+
+## Live
+
+### L1: Read on a page that keeps writing
+- when: the reader wants to read in a browser (see `docs/live-reader.md`)
+- pages: one idea per page. Deliver written parts unchanged, cut at their
+  headings.
+- choices: end a page with one check from the part, as two or three buttons.
+  The wrong answers are real misconceptions (`canon/misconceptions.md`); the
+  next page responds to the one they picked, without scolding.
+- `ask`: answer from canon in a short boxed aside, with the item id, then go
+  on. If canon has no answer, say so.
+- `more`: one more example or a diagram (V briefs) on the thing selected.
+- `say`: in *Fix my thing*, this is how they describe the job. Reorder the
+  book around it.
+- `mark`: goes on their cheat card (V12), which is this book's own edition.

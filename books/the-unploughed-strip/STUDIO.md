@@ -2,8 +2,7 @@
 
 Briefs for things you may make for the reader. The story works with none of
 them. Make one when it deepens the sitting. Save to
-`reader/the-unploughed-strip/artifacts/` with a provenance note (see
-`START.md`).
+`reader/the-unploughed-strip/artifacts/`.
 
 ## Capability ladder
 
@@ -133,6 +132,93 @@ phone in bed with the light low: dark by default.
 - when: after chapter 12, if the reader wants it
 - make: one page (or a print-ready file) holding the book as this reader met
   it: the written chapters, the seeds as grown for them, their plates, map
-  and tally, each piece marked *author-text* or *improvised*, with the date
-  they read it
+  tally and character sheets, the passages they marked, and the dates they
+  read it. No labels about who wrote what; it is their book.
 - done when: they would give it to someone
+
+## Character sheets
+
+### C1: Who they are, so far
+- when: on request, or when a reader returns after a gap; update after each
+  chapter
+- make: one sheet per person the reader has met: name, age, kin, what they
+  do all day, how they talk, one object that is theirs, where the reader last
+  saw them, and what they want, once the story has shown it
+- the unseen get sheets too, mostly blank: what was noticed, and by whom.
+  "Seen by: Katka, once. Not by Baba." The blanks are the point.
+- animals get sheets. Rohan's should be the longest.
+- must not: include anything from a secret or a chapter not yet reached
+- done when: a reader coming back after a month needs nothing else
+
+## Objects
+
+### O1: The tally in the hand
+- when: after chapter 01
+- make: the hazel rod as a 3D object the reader can turn: peeled, grey with
+  handling, the right number of notches (see V3). Also as a printable or
+  carvable pattern at full size.
+- *Walk the year*: invite the reader to cut their own stick and add a notch
+  on St George's Day. It is the one thing in this book they can hold.
+- done when: the reader turns it over to look at the unmarked side
+
+### O2: The plough
+- when: chapter 06, or a curious reader
+- make: the ox-plough as a model that comes apart: beam, stilt, sole, the
+  iron share and coulter, and what holds it together: wedges, pegs and a
+  forged ring, no screws
+- canon: H1, U5. The only iron on the farm that goes into the ground.
+- done when: the reader can find the iron
+
+## Style
+
+### S1: The season on the page
+- when: any page you make for this book, and every page of the live reader
+- make: a theme that follows the year. Set it at the start of each chapter
+  and let it hold.
+
+| Chapter | Ground | Ink | Accent |
+|---|---|---|---|
+| 01 April, before dawn | `#12161a` | `#d8d6cc` | `#7d9a86` |
+| 02 May, dry | `#f1ead8` | `#2a2620` | `#9a7b3c` |
+| 03 June | `#eef0dc` | `#22281c` | `#4f7a3a` |
+| 04 July, noon | `#fbf6e4` | `#2b261b` | `#c9992e` |
+| 05 August | `#efe6cf` | `#2a241c` | `#8c6a2f` |
+| 06 September, dawn | `#e6e0d6` | `#25211e` | `#7a3b2a` |
+| 07 October | `#e3dccb` | `#28231c` | `#8a5a2b` |
+| 08 November, night | `#17140f` | `#dcd3c1` | `#b0743a` |
+| 09 December | `#eef0f1` | `#22262a` | `#8a2f2a` |
+| 10 January | `#e9edf0` | `#20252b` | `#56707f` |
+| 11 Lent | `#dfe0d8` | `#23241f` | `#5d6b4f` |
+| 12 April | as 01, a little lighter | | |
+
+- type: a bookish serif, generous leading, a narrow column. No blackletter,
+  no parchment texture, no drop caps with vines.
+- done when: the reader notices the light has changed and not the design
+
+### S2: The Black Eye
+- when: live reader or a web page, only while the story is at the pool
+  (chapters 01, 11, 12)
+- make: a shader behind the text: near-black water, a very slow drift, and
+  now and then one ring opening from a point and fading
+- must not: lower the contrast of the text; show anything in the water;
+  appear in any other scene. Turn it off as soon as they leave the pool.
+- done when: the reader stops scrolling for a moment at the ring
+
+## Live
+
+### L1: Read on a page that keeps writing
+- when: the reader wants to read in a browser (see `docs/live-reader.md`)
+- pages: 150–250 words. Cut written chapters at paragraph breaks and deliver
+  them unchanged.
+- choices: the main line does not fork (the ending is fixed). Offer choices
+  of **attention**: "stay with Baba" or "watch Jakub" changes what Katka
+  notices in the next page, not what happens. In *Among them*, choices are
+  free.
+- `more`: slow down and stay with what was selected: the bread, the oxen, a
+  hand. One page, then back to the chapter.
+- `ask`: if a person in the scene could answer, let them, in the story. If
+  not, a short aside set apart from the story text, then go on.
+- `say`: treat as the reader speaking in the dark by the oven. Answer in the
+  next page.
+- `mark`: keep for the reader's own edition (W3).
+- theme per S1; shader per S2.

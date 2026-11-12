@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading</title>
+<style>
+  :root { --bg:#f6f1e7; --ink:#231f1a; --accent:#a4442a; --muted:#8a8073;
+          --font: Georgia, "Iowan Old Style", "Palatino Linotype", serif; --measure: 34rem; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16140f; --ink:#e6dfd2; --accent:#d98a5f; --muted:#8f8676; } }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); transition: background 1.2s; }
+  body { margin:0; color:var(--ink); font: 1.125rem/1.65 var(--font); transition: color 1.2s; }
+  canvas#sky { position:fixed; inset:0; width:100%; height:100%; z-index:-1; display:none; }
+  main { max-width: var(--measure); margin: 0 auto; padding: 12vh 16px 30vh; }
+  article { margin-bottom: 16vh; animation: rise .9s ease both; }
+  @keyframes rise { from { opacity:0; transform: translateY(12px); } }
+  @media (prefers-reduced-motion: reduce) { article { animation:none; } html, body { transition:none; } }
+  h1 { font-size:1.5rem; line-height:1.25; margin:0 0 1.2em; font-weight:600; text-wrap:balance; }
+  article img, article svg { max-width:100%; height:auto; }
+  article pre { white-space: pre-wrap; font: inherit; }
+  .choices { display:flex; flex-wrap:wrap; gap:8px; margin-top:2em; }
+  button { font: 0.95rem/1.2 system-ui, sans-serif; color:var(--ink); background:transparent;
+           border:1px solid var(--muted); border-radius:999px; padding:9px 16px; cursor:pointer; }
+  button:hover, button:focus-visible { border-color:var(--accent); color:var(--accent); outline:none; }
+  button[disabled] { opacity:.45; cursor:default; }
+  button.chosen { background:var(--accent); border-color:var(--accent); color:var(--bg); opacity:1; }
+  #wait { color:var(--muted); font-style:italic; min-height:2em; }
+  #pop { position:absolute; display:none; gap:6px; background:var(--bg); padding:6px; border-radius:999px;
+         box-shadow:0 2px 14px rgba(0,0,0,.28); z-index:5; }
+  #say { position:fixed; left:0; right:0; bottom:0; display:flex; gap:8px; padding:10px 16px;
+         background: linear-gradient(transparent, var(--bg) 40%); }
+  #say input { flex:1; max-width: var(--measure); margin-left:auto; font: 1rem system-ui, sans-serif;
+         color:var(--ink); background:transparent; border:0; border-bottom:1px solid var(--muted); padding:8px 2px; }
+  #say input:focus { outline:none; border-color:var(--accent); }
+  #say button { margin-right:auto; }
+  mark { background: color-mix(in srgb, var(--accent) 28%, transparent); color:inherit; }
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<main id="book"></main>
+<main style="padding-top:0"><p id="wait"></p></main>
+<div id="pop">
+  <button data-act="ask">Ask</button><button data-act="more">More of this</button><button data-act="mark">Mark</button>
+</div>
+<form id="say"><input id="sayText" placeholder="Say something to the book…" autocomplete="off"><button>Send</button></form>
+<script>
+const book = document.getElementById('book'), waitEl = document.getElementById('wait'), pop = document.getElementById('pop');
+let count = 0, ended = false, askedFor = -1;
+
+function send(ev) {
+  return fetch('/event', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(ev) }).catch(() => {});
+}
+
+// Agent-written HTML is shown, never run: no scripts, no handlers, no remote loads.
+function clean(html) {
+  const doc = new DOMParser().parseFromString('<div>' + html + '</div>', 'text/html');
+  doc.querySelectorAll('script,iframe,object,embed,link,meta,base,form').forEach(n => n.remove());
+  doc.querySelectorAll('*').forEach(n => {
+    for (const a of [...n.attributes]) {
+      const v = a.value.trim().toLowerCase();
+      if (a.name.startsWith('on')) n.removeAttribute(a.name);
+      else if (['src','href','xlink:href'].includes(a.name) && !(v.startsWith('data:image/') || v.startsWith('#'))) n.removeAttribute(a.name);
+    }
+  });
+  return doc.body.firstChild.innerHTML;
+}
+
+function applyTheme(t) {
+  if (!t) return;
+  const map = { bg:'--bg', ink:'--ink', accent:'--accent', muted:'--muted', font:'--font', measure:'--measure' };
+  for (const k in map) if (typeof t[k] === 'string' && !/[;{}<]/.test(t[k])) document.documentElement.style.setProperty(map[k], t[k]);
+}
+
+function addPage(p, index) {
+  const art = document.createElement('article');
+  art.dataset.index = index; art.dataset.id = p.id || String(index + 1);
+  art._page = p;
+  if (p.title) { const h = document.createElement('h1'); h.textContent = p.title; art.append(h); }
+  const body = document.createElement('div'); body.innerHTML = clean(p.html || ''); art.append(body);
+  if (Array.isArray(p.choices) && p.choices.length) {
+    const row = document.createElement('div'); row.className = 'choices';
+    p.choices.forEach(label => {
+      const b = document.createElement('button'); b.textContent = label;
+      b.onclick = () => { row.querySelectorAll('button').forEach(x => x.disabled = true); b.classList.add('chosen');
+                          send({ type:'choice', page: art.dataset.id, text: label }); };
+      row.append(b);
+    });
+    art.append(row);
+  }
+  book.append(art); seen.observe(art);
+  if (p.end) ended = true;
+}
+
+// A page takes effect (theme, shader) when the reader arrives at it, and the agent is told.
+const seen = new IntersectionObserver(entries => {
+  for (const e of entries) if (e.isIntersecting) {
+    const art = e.target, p = art._page; seen.unobserve(art);
+    applyTheme(p.theme); if ('shader' in p) setShader(p.shader);
+    send({ type:'reached', page: art.dataset.id, index: +art.dataset.index, of: count });
+  }
+}, { rootMargin: '0px 0px -55% 0px' });
+
+async function poll() {
+  try {
+    const pages = await (await fetch('/pages?after=' + count)).json();
+    pages.forEach((p, i) => addPage(p, count + i)); count += pages.length;
+  } catch (e) {}
+  const nearEnd = innerHeight + scrollY > document.body.scrollHeight - innerHeight * 0.6;
+  if (ended) waitEl.textContent = '';
+  else if (nearEnd) {
+    waitEl.textContent = count ? 'The next page is being written…' : 'Waiting for the first page…';
+    if (askedFor !== count) { askedFor = count; send({ type:'waiting', after: count }); }
+  } else waitEl.textContent = '';
+  setTimeout(poll, 1500);
+}
+
+// Selecting text offers three small actions.
+document.addEventListener('selectionchange', () => {
+  const s = getSelection(), text = s.toString().trim();
+  if (!text || !s.rangeCount || !book.contains(s.anchorNode)) { pop.style.display = 'none'; return; }
+  const r = s.getRangeAt(0).getBoundingClientRect();
+  pop.style.display = 'flex';
+  pop.style.top = (scrollY + r.bottom + 8) + 'px';
+  pop.style.left = Math.max(8, Math.min(innerWidth - pop.offsetWidth - 8, r.left)) + 'px';
+});
+pop.addEventListener('mousedown', e => e.preventDefault());
+pop.addEventListener('click', e => {
+  const act = e.target.dataset.act; if (!act) return;
+  const s = getSelection(), text = s.toString().trim().slice(0, 1500);
+  const art = s.anchorNode && (s.anchorNode.nodeType === 1 ? s.anchorNode : s.anchorNode.parentElement).closest('article');
+  if (act === 'mark') { try { const m = document.createElement('mark'); s.getRangeAt(0).surroundContents(m); } catch (err) {} }
+  send({ type: act, page: art ? art.dataset.id : null, text });
+  s.removeAllRanges(); pop.style.display = 'none';
+});
+document.getElementById('say').addEventListener('submit', e => {
+  e.preventDefault(); const i = document.getElementById('sayText'), text = i.value.trim().slice(0, 1500);
+  if (text) { send({ type:'say', text }); i.value = ''; i.placeholder = 'Sent. The book will answer in the next page.'; }
+});
+
+// Optional background shader: a GLSL fragment shader body with uniforms u_time, u_res.
+let gl, prog, raf;
+function setShader(src) {
+  const cv = document.getElementById('sky'); cancelAnimationFrame(raf);
+  if (!src || matchMedia('(prefers-reduced-motion: reduce)').matches) { cv.style.display = 'none'; return; }
+  gl = gl || cv.getContext('webgl'); if (!gl) return;
+  const mk = (type, s) => { const sh = gl.createShader(type); gl.shaderSource(sh, s); gl.compileShader(sh);
+                            return gl.getShaderParameter(sh, gl.COMPILE_STATUS) ? sh : null; };
+  const vs = mk(gl.VERTEX_SHADER, 'attribute vec2 p; void main(){ gl_Position = vec4(p,0.,1.); }');
+  const fs = mk(gl.FRAGMENT_SHADER, 'precision mediump float; uniform float u_time; uniform vec2 u_res;\n' + src);
+  if (!fs) { cv.style.display = 'none'; send({ type:'error', text:'shader did not compile' }); return; }
+  prog = gl.createProgram(); gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog); gl.useProgram(prog);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const loc = gl.getAttribLocation(prog, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  cv.style.display = 'block';
+  const t0 = performance.now();
+  (function frame() {
+    const w = cv.clientWidth >> 1, h = cv.clientHeight >> 1;
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+    gl.viewport(0, 0, w, h);
+    gl.uniform1f(gl.getUniformLocation(prog, 'u_time'), (performance.now() - t0) / 1000);
+    gl.uniform2f(gl.getUniformLocation(prog, 'u_res'), w, h);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    raf = requestAnimationFrame(frame);
+  })();
+}
+
+send({ type:'open' }); poll();
+</script>
+</body>
+</html>

@@ -1,6 +1,11 @@
 # Ideas and open questions
 
-A working list. Nothing here is decided. Rough order: nearer and cheaper first.
+A working list. Rough order: nearer and cheaper first.
+
+**Adopted so far** (now in `format.md`): the live reader, canon tests, seeds
+graduating through `candidates/`, the reader's own edition, tone files per
+language, per-book provenance, and brief kinds for maps, character sheets,
+3D objects and style (CSS, shaders). The rest is open.
 
 ## Reading experiences
 
