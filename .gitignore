@@ -1,0 +1,2 @@
+# Per-reader state and generated artifacts stay on the reader's machine.
+reader/

@@ -1,0 +1,138 @@
+# Studio: The Unploughed Strip
+
+Briefs for things you may make for the reader. The story works with none of
+them. Make one when it deepens the sitting. Save to
+`reader/the-unploughed-strip/artifacts/` with a provenance note (see
+`START.md`).
+
+## Capability ladder
+
+| Rung | You can | Do |
+|---|---|---|
+| 0 | Chat text only | Tell the story. Nothing else is needed. |
+| 1 | Write or render SVG/HTML | The map (V2), the tally (V3), the year-wheel (W1). |
+| 2 | Generate images | Chapter plates (V1) and portraits on request (V4). |
+| 3 | Generate speech or sound | Narration (A1), soundscapes (A2), the bell (A3). |
+| 4 | Publish | The reader's own edition (W3), only when asked. |
+
+## Direction
+
+**Look.** Woodcut and pen-and-wash, as if cut by someone in the village: heavy
+black line, flat areas, visible grain. Palette of four: soot black, unbleached
+linen, madder red used once per image, alder green. Low horizons, big skies,
+people small in the land. No manuscript illumination pastiche, no gold, no
+fantasy-art lighting, no castles on crags.
+
+**People.** Seen from behind, from a distance, or at work. Faces are plain and
+are not prettified. Clothing per canon H6. Keep any portrait you make and
+reuse its description from `local-canon.md` so a person looks the same in
+chapter 9 as in chapter 2.
+
+**The unseen are never drawn.** Draw what Katka could point to afterwards: the
+ring on the water, the wet mark on a root, an empty dish, a field at noon with
+the air shaking. This is rule U3 applied to pictures: the reader is a second
+witness, so they do not get to see either.
+
+**Check every image against canon H4** before showing it. Image models add
+chimneys, glass windows, horses in collars, pumpkins and stone cottages by
+default. Regenerate or do without.
+
+**Voice (audio).** One narrator, unhurried, close, as if by an oven at night.
+No character voices beyond a slight change of pace. Pauses at paragraph breaks
+are part of the text. Names per `world/voice.md`. Sound sits under the voice,
+never competes with it, and there is no music.
+
+**Pages.** One self-contained HTML file, no network requests, readable on a
+phone in bed with the light low: dark by default.
+
+## Visual briefs
+
+### V1: Chapter plate
+- when: at the start or end of a chapter, at most one per chapter
+- make: a single woodcut-style image of the chapter's last image (each seed's
+  *shape* names it; for 01, the peg and the cord at the corner of the Share;
+  for 02, the dish on the threshold)
+- must not: show the unseen; show a scene the reader has not reached
+- done when: it could be the only picture on a facing page and needs no caption
+
+### V2: The valley map, growing
+- when: after chapter 01, then updated as places are first visited
+- make: a hand-drawn-style map of the valley from canon P1–P8: village,
+  chapel, the three fields with strips, the Share, Alder Wood, Black Eye,
+  stream, mill, the way up to the New Clearing
+- rule: a place appears on the map only once the story has been there. After
+  01: house, lane, Under-the-Alders, the Share, the wood, the pool. After 02:
+  chapel and linden, the Stony, the mill. After 06: the Share is redrawn
+  ploughed. After 12: the new Share on the Upper.
+- must not: add roads, castles, compass roses or names not in canon
+- done when: the reader can trace the walk from the house to the pool
+
+### V3: The tally
+- when: after chapter 01; again after 06 (unchanged, which is the point), and
+  after 12
+- make: the hazel rod drawn full length with exactly the right number of
+  notches: 59 after chapter 01; still 59 after 06–11; in 12, a second, new rod
+  with 1
+- must not: get the count wrong. Count them before showing.
+- done when: the reader counts them
+
+### V4: A portrait, on request
+- when: the reader asks what someone looks like
+- make: one figure at work, three-quarter back or profile
+- record the description in `local-canon.md` and reuse it
+
+### V5: The year so far (*Walk the year*)
+- when: each new month
+- make: a small strip, one panel per chapter read, each showing the same view
+  of the family's land from the house, changing with season and plot
+- done when: twelve panels at the end read as one year
+
+## Audio briefs
+
+### A1: Chapter read aloud
+- when: the reader asks to listen, or it is evidently bedtime
+- make: narration of the chapter per the voice direction; leave out the
+  *Threads* and *Notes* sections; say the title and the feast, then begin
+- done when: it can be listened to in the dark with nothing lost
+
+### A2: Ground
+- when: under A1, or alone for a minute before a chapter
+- make: a quiet bed of place and season with no melody. 01: night, stream
+  running then going still, one drip. 02: dry wind in leaves, a pail handle.
+  03: scythes and whetstone, then fire. 04: grasshoppers, heat, then nothing
+  at all. 06: an ox blowing, wood creaking, roots tearing. 08: a banked fire.
+  09: flails in rhythm. 10: snow silence, far wolves. 11: running water.
+  12: as 01.
+- must not: include any sound not possible in 1300 (H4), or any voice
+- done when: the reader does not notice it start
+
+### A3: The bell
+- when: *Walk the year*, to open a sitting
+- make: one small chapel bell, struck by hand, slightly uneven, three strokes
+
+## Web briefs
+
+### W1: The year-wheel
+- when: *Walk the year*; or a reader asks where they are in the year
+- make: a circular calendar of the story's year: outer ring the feasts (T3),
+  middle ring the work (T4), inner ring the three fields and what each carries
+  (P5); a marker at the reader's current chapter; chapters ahead are shown as
+  feasts only
+- must not: show plot ahead of the reader
+- done when: the reader can say what the family is doing next month
+
+### W2: With notes
+- when: *With notes* mode
+- make: the chapter as a page with marginal notes that open on tap, each
+  tagged *attested*, *later folklore*, or *invented*, from canon section H
+- must not: put notes inside the story text; cite sources canon does not give
+  (say "see a history of the period" and let the reader ask you)
+- done when: the story reads cleanly with every note closed
+
+### W3: The reader's own edition
+- when: after chapter 12, if the reader wants it
+- make: one page (or a print-ready file) holding the book as this reader met
+  it: the written chapters, the seeds as grown for them, their plates, map
+  and tally, each piece marked *author-text* or *improvised*, with the date
+  they read it
+- done when: they would give it to someone

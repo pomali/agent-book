@@ -1,0 +1,24 @@
+{
+  "format": "agent-book/0.1",
+  "raw_base": "https://raw.githubusercontent.com/pomali/agent-book/HEAD/",
+  "books": [
+    {
+      "id": "hold-fast",
+      "title": "Hold Fast: A Field Guide to Screws and Fastenings",
+      "kind": "educational",
+      "language": "en",
+      "manifest": "books/hold-fast/BOOK.md",
+      "pitch": "Why joints hold, and how to choose, drill for and tighten the right fastener.",
+      "good_for": ["DIY repair", "woodworking", "bikes and machines", "engineering students", "curious kids with an adult"]
+    },
+    {
+      "id": "the-unploughed-strip",
+      "title": "The Unploughed Strip",
+      "kind": "fiction/fantasy",
+      "language": "en",
+      "manifest": "books/the-unploughed-strip/BOOK.md",
+      "pitch": "A farming family in 1300 keeps one strip of field unploughed for those who were there first. This year someone ploughs it.",
+      "good_for": ["slow seasonal reading", "historical fiction", "folklore", "reading aloud", "history learners"]
+    }
+  ]
+}
