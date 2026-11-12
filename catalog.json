@@ -9,7 +9,13 @@
       "language": "en",
       "manifest": "books/hold-fast/BOOK.md",
       "pitch": "Why joints hold, and how to choose, drill for and tighten the right fastener.",
-      "good_for": ["DIY repair", "woodworking", "bikes and machines", "engineering students", "curious kids with an adult"]
+      "good_for": [
+        "DIY repair",
+        "woodworking",
+        "bikes and machines",
+        "engineering students",
+        "curious kids with an adult"
+      ]
     },
     {
       "id": "the-unploughed-strip",
@@ -18,7 +24,30 @@
       "language": "en",
       "manifest": "books/the-unploughed-strip/BOOK.md",
       "pitch": "A farming family in 1300 keeps one strip of field unploughed for those who were there first. This year someone ploughs it.",
-      "good_for": ["slow seasonal reading", "historical fiction", "folklore", "reading aloud", "history learners"]
+      "good_for": [
+        "slow seasonal reading",
+        "historical fiction",
+        "folklore",
+        "reading aloud",
+        "history learners"
+      ]
+    },
+    {
+      "id": "ajax",
+      "title": "Ajax",
+      "author": "Sophocles, translated by Francis Storr (1913)",
+      "kind": "classic/drama",
+      "language": "en",
+      "manifest": "books/ajax/BOOK.md",
+      "pitch": "A Greek tragedy, complete and unaltered, with an agent as dramaturg: staged, voiced, glossed and argued over.",
+      "good_for": [
+        "listening",
+        "students and reading groups",
+        "reading aloud or acting",
+        "theatre makers",
+        "classics without the homework"
+      ],
+      "content_note": "Centres on a suicide and its aftermath."
     }
   ]
 }

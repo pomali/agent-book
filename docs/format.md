@@ -24,8 +24,10 @@ books/<book-id>/
     OUTLINE.md        all seeds, in order
 ```
 
-Use `canon/` + `parts/` for non-fiction and `world/` + `chapters/` for
-fiction. The names are for humans; `BOOK.md` points to the real paths.
+A book built on an existing text also has `SOURCE.md` (see below).
+
+Use `canon/` + `parts/` for non-fiction, `world/` + `chapters/` for fiction,
+`canon/` + `scenes/` for a play. The names are for humans; `BOOK.md` points to the real paths.
 
 ## BOOK.md
 
@@ -101,6 +103,35 @@ Rules:
   canon is wrong or out of date, and should report it upstream.
 - Agents never edit canon for a reader. Reader-specific inventions go to
   `reader/<book-id>/local-canon.md`.
+
+## Existing texts (`SOURCE.md`)
+
+A book may be built on a text somebody else wrote, if it is in the public
+domain or licensed for this use. Then:
+
+- Every part of the main line is `written` and is delivered unaltered. The
+  agent never grows, trims or modernises it silently.
+- Each part file has two sections: `## Text` (the source, verbatim) and
+  `## Companion` (new material for the agent: what to say before, what to
+  watch for, questions, staging or teaching choices).
+- Seeds exist only for material *around* the text.
+- Canon gains two kinds of item: what the original audience already knew,
+  and **open questions** the agent must present and not settle.
+- Passages get stable ids (`scene.speech`, `chapter.paragraph`) so that the
+  agent and reader can cite without page numbers.
+- `SOURCE.md` records the work, the edition and revision used, its rights
+  status, exactly what was done to the text, and every correction made.
+  `BOOK.md` front matter adds `author`, `translator` if any, and
+  `source: SOURCE.md`.
+
+`books/ajax/` is the reference.
+
+## Content that needs care
+
+A part that needs particular care (self-harm, violence, anything a reader
+may be close to) is marked `care: true` in its front matter, and `BOOK.md`
+states, as its first book-specific rule, how the agent handles it. The
+catalog entry carries a one-line `content_note`.
 
 ## STUDIO.md
 

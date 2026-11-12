@@ -82,6 +82,33 @@ the manifest.
 
 Add the book to `catalog.json` and the table in the root `README.md`.
 
+## Adapting an existing text
+
+For a public-domain or openly licensed work. `books/ajax/` shows the result.
+
+1. **Check the rights and write them down.** Translation, edition and
+   illustrations each have their own status. Record it in `SOURCE.md`.
+2. **Convert mechanically.** Use a script, not retyping and not an agent's
+   memory of the text. Keep line breaks in verse. Diff a sample against the
+   source.
+3. **Divide for sittings**, at the work's own joints. Say that the divisions
+   and titles are yours.
+4. **Number the passages** so they can be cited.
+5. **Correct only evident slips** and list every one.
+6. **Write the Companion for each part.** One line to say before it. Three to
+   six things to watch for, each pointing at a passage. Two questions. The
+   choices a director or teacher would face. This is where your work is.
+7. **Write canon from the outside in**: what the first audience knew; what
+   happens; the conditions the work was made for; what came after; and the
+   open questions, stated fairly, with an instruction not to settle them.
+8. **Add a glossary** if the language is old. Tell the agent to gloss in
+   passing.
+9. **Decide the bridge.** How may the agent help a modern reader without
+   replacing the text: paraphrase alongside, glosses only, performance? Make
+   it a reading mode and say which passages must always be given in the
+   original words.
+10. **Mark what needs care** and write the rule.
+
 ## Checklists
 
 **Manifest**

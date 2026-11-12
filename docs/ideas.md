@@ -41,6 +41,15 @@ A working list. Nothing here is decided. Rough order: nearer and cheaper first.
 - **Physical output.** STL for a thread-pitch gauge; a printable tally stick;
   a seed-packet insert.
 
+- **A shelf of classics.** Any public-domain text can be given a Companion
+  layer. *Ajax* took one script and one sitting to convert; the work is in
+  the companions and the open questions. A converter from Standard Ebooks or
+  Project Gutenberg to scene files, plus an agent drafting companions for an
+  editor to correct, would scale it.
+- **Annotation layers by different hands.** One fixed text, several
+  Companions: a director's, a classicist's, a soldier's, a schoolteacher's.
+  The reader picks who sits beside them.
+
 ## Format
 
 - **Canon tests.** A `tests/` file of question → expected answer pairs. Any

@@ -20,6 +20,7 @@ That is the whole interface.
 | Book | Kind | What it is |
 |---|---|---|
 | [Hold Fast](books/hold-fast/BOOK.md) | Educational | Screws and fastenings: why joints hold, how to pick and tighten the right fastener. |
+| [Ajax](books/ajax/BOOK.md) | Classic drama | Sophocles' tragedy in Francis Storr's 1913 verse, complete and unaltered. The agent stages it, voices it, glosses it and argues about it. |
 | [The Unploughed Strip](books/the-unploughed-strip/BOOK.md) | Fantasy | One farming family, one year (1300–1301), a valley in the Kingdom of Hungary, and a debt to things that are not people. |
 
 ## Make a book
