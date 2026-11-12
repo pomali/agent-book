@@ -218,9 +218,12 @@ its numbers could be misused.
 - choices: end a page with one check from the part, as two or three buttons.
   The wrong answers are real misconceptions (`canon/misconceptions.md`); the
   next page responds to the one they picked, without scolding.
-- `ask`: answer from canon in a short boxed aside, with the item id, then go
-  on. If canon has no answer, say so.
-- `more`: one more example or a diagram (V briefs) on the thing selected.
+- sidenotes: the diagram for the paragraph (V briefs, as inline SVG, animated
+  where motion explains: a nut advancing one pitch per turn); the number and
+  its limits; "where this comes from"; a misconception by name.
+- `ask`: answer from canon in a sidenote on the next page, with the item id.
+  If canon has no answer, say so.
+- `more`: one more example or a diagram in a sidenote.
 - `say`: in *Fix my thing*, this is how they describe the job. Reorder the
   book around it.
 - `mark`: goes on their cheat card (V12), which is this book's own edition.

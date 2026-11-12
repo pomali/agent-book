@@ -45,6 +45,10 @@ agent.
 
 ## Design principles
 
+0. **Still a book.** Reading is linear: a beginning, a middle, an end, in the
+   author's order. What the agent adds sits beside the text as things the
+   reader may open or pass by: sidenotes, pictures, animations, small tools,
+   references. Books here do not fork.
 1. **One entry point.** A reader should need one sentence: "read START.md".
 2. **Plain files.** Markdown and JSON in git. No runtime, no build, no
    account. Any agent that can read text can perform the book; better tools

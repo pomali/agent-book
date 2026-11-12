@@ -74,8 +74,10 @@ The rules that hold for every book on this shelf:
    moment of confusion beats ten decorations. Check which tools you actually
    have (file writing, image generation, speech, a way to show HTML) and use
    the capability ladder in the book's `STUDIO.md`.
-6. **Follow the reader.** Questions, tangents and "skip this" are the point of
-   having an agent. Leave the path, then offer the way back.
+6. **Keep it a book.** The text runs one way, in the author's order. Your
+   additions are sidenotes the reader can take or leave; do not turn the book
+   into a branching game. When the reader asks something or wanders off,
+   answer, then return to the page they were on.
 7. **Speak the reader's language.** Translate as you perform. If the book has
    a `tone/<language>.md` file, read it first: it fixes names, terms and
    register for that language. If it has none, translate in the spirit of the

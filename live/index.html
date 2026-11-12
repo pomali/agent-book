@@ -34,6 +34,17 @@
          color:var(--ink); background:transparent; border:0; border-bottom:1px solid var(--muted); padding:8px 2px; }
   #say input:focus { outline:none; border-color:var(--accent); }
   #say button { margin-right:auto; }
+  details.note { margin: 1em 0 1em 1.2em; padding-left: .9em; border-left: 2px solid var(--accent);
+                 font-size: .92rem; line-height: 1.5; }
+  details.note summary { cursor:pointer; color: var(--accent); font: .82rem/1.4 system-ui, sans-serif;
+                         letter-spacing: .02em; list-style: none; }
+  details.note summary::-webkit-details-marker { display:none; }
+  details.note summary::before { content: "+ "; }
+  details.note[open] summary::before { content: "\2212  "; }
+  details.note[open] summary { margin-bottom: .5em; }
+  @media (min-width: 1180px) {
+    details.note { float:right; clear:right; width:15rem; margin: .2em -17.5rem 1em 0; }
+  }
   mark { background: color-mix(in srgb, var(--accent) 28%, transparent); color:inherit; }
 </style>
 </head>
@@ -79,6 +90,17 @@ function addPage(p, index) {
   art._page = p;
   if (p.title) { const h = document.createElement('h1'); h.textContent = p.title; art.append(h); }
   const body = document.createElement('div'); body.innerHTML = clean(p.html || ''); art.append(body);
+  // Sidenotes: closed by default, placed after a given paragraph; reading goes on without them.
+  (Array.isArray(p.notes) ? p.notes : []).forEach(n => {
+    const d = document.createElement('details'); d.className = 'note';
+    const s = document.createElement('summary'); s.textContent = n.label || 'Note'; d.append(s);
+    const c = document.createElement('div'); c.innerHTML = clean(n.html || ''); d.append(c);
+    d.addEventListener('toggle', () => { if (d.open && !d._sent) { d._sent = true; send({ type:'note', page: art.dataset.id, text: s.textContent }); } });
+    const blocks = [...body.children].filter(x => !x.matches('details.note'));
+    const at = blocks[Math.max(1, Math.min(blocks.length, n.after || blocks.length)) - 1];
+    // In a wide window the note floats in the margin level with its paragraph; in a narrow one it follows it.
+    if (!at) body.append(d); else if (matchMedia('(min-width: 1180px)').matches) at.before(d); else at.after(d);
+  });
   if (Array.isArray(p.choices) && p.choices.length) {
     const row = document.createElement('div'); row.className = 'choices';
     p.choices.forEach(label => {

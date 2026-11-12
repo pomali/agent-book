@@ -191,9 +191,12 @@ choir pads, no harmony.
   reordered or reworded to fit.
 - choices: never anything that changes the play. Offer only: Storr or plain
   speech for the next page; in *Rehearsal*, the scene's staging choices.
-- `ask`: a gloss or a line of context in the margin, from canon and the
-  glossary. On an open question (Q), the sides, not a verdict.
-- `more`: the same passage again in plain speech, or performed (A1).
+- sidenotes: glosses of Storr's words; who a name refers to; the plain-speech
+  version of a hard speech; Storr's own footnotes; the stage plan (V2) when
+  someone enters. This is what the margin of a play text has always been for.
+- `ask`: a sidenote on the next page, from canon and the glossary. On an open
+  question (Q), the sides, not a verdict.
+- `more`: the same passage in plain speech, as a sidenote.
 - `mark`: kept for their production (W3).
 - scene 07: one page, no choices, nothing offered. Do not send the next page
   until the reader asks for it.

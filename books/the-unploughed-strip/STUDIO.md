@@ -210,15 +210,15 @@ phone in bed with the light low: dark by default.
 - when: the reader wants to read in a browser (see `docs/live-reader.md`)
 - pages: 150–250 words. Cut written chapters at paragraph breaks and deliver
   them unchanged.
-- choices: the main line does not fork (the ending is fixed). Offer choices
-  of **attention**: "stay with Baba" or "watch Jakub" changes what Katka
-  notices in the next page, not what happens. In *Among them*, choices are
-  free.
-- `more`: slow down and stay with what was selected: the bread, the oxen, a
-  hand. One page, then back to the chapter.
-- `ask`: if a person in the scene could answer, let them, in the story. If
-  not, a short aside set apart from the story text, then go on.
-- `say`: treat as the reader speaking in the dark by the oven. Answer in the
-  next page.
+- no choices. The story goes one way.
+- sidenotes, at most two a page, never needed to follow the story. Good
+  ones: a word (lán, šoltýs, tally); "where they are" with the map (V2);
+  what the family would be doing this week (canon T4); a small drawing of a
+  thing just named (the yoke, the dish, the measuring cord); a character
+  sheet (C1) when someone returns after a long absence; in *With notes*, the
+  history (canon H).
+- never a sidenote on the unseen. No note explains the bread.
+- `ask`, `more`, `say`: answer in a sidenote on the next page. The story
+  text is not bent to answer.
 - `mark`: keep for the reader's own edition (W3).
 - theme per S1; shader per S2.
